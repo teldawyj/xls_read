@@ -13,5 +13,6 @@ class Xls:
         # self.type = self.sheet._cell_types
         for i in range(self.sheet.nrows):
             for j in range(self.sheet.ncols):
+                print(self.sheet_data[i][j])
                 self.data[i][j] = self.sheet_data[i][j]
                 self.data_t[i][j] = self.sheet_data[j][i]

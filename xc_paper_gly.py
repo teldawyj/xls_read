@@ -1,4 +1,5 @@
 import pandas as pd
+from scipy import stats
 
 if __name__ == "__main__":
     # file = "E:\\o\\github_branch\\xls_read\\data\\day170230aresult1.xls"
@@ -21,3 +22,7 @@ if __name__ == "__main__":
 
     print("gly-GluA1, \tmean = ", gly["GluA1-MA"].mean(),
           " \tstd = ", gly["GluA1-MA"].std())
+
+    ctrl_val = 0
+    gly_val = 0
+    stats.ttest_ind(ctrl_val, gly_val, equal_var=False)

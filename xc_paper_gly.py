@@ -23,6 +23,9 @@ if __name__ == "__main__":
     print("gly-GluA1, \tmean = ", gly["GluA1-MA"].mean(),
           " \tstd = ", gly["GluA1-MA"].std())
 
-    ctrl_val = 0
-    gly_val = 0
-    stats.ttest_ind(ctrl_val, gly_val, equal_var=False)
+    #ttest equals T.TEST(a,b,2,3) in EXCEL which is two tail ,two sample unequal variance)
+
+    ctrl_val = list(ctrl["GluA1-MA"])
+    gly_val = list(gly["GluA1-MA"])
+    print(stats.ttest_ind(ctrl_val, gly_val, equal_var=False))
+    print(stats.ttest_ind([1,1,1.2], [20,20,19.9], equal_var=False))
